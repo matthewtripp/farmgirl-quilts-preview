@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Farmgirl Quilts Studio | Quilting &amp; Stitching in Marquette, Michigan</title>
+  <meta name="description" content="Farmgirl Quilts Stitching Studio in Marquette, Michigan — fabric, thread, wool, kits, long arm quilting, classes and private sewing retreats. The Upper Peninsula's destination for all things quilting and stitching.">
+  <meta property="og:title" content="Farmgirl Quilts Studio — Marquette, Michigan">
+  <meta property="og:description" content="Your destination for all things quilting & stitching in Michigan's Upper Peninsula.">
+  <meta property="og:image" content="images/studio-interior.jpg">
+  <link rel="icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bentham&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #931B1F;
+      --red-dark: #6F1316;
+      --gold: #E0B26D;
+      --gold-soft: #F4E6CC;
+      --cream: #FBF7F0;
+      --paper: #FFFFFF;
+      --ink: #2A2421;
+      --muted: #6B5F57;
+      --line: #E8DDCC;
+      --radius: 14px;
+      --shadow: 0 10px 30px -12px rgba(60, 30, 20, .25);
+      --serif: "Bentham", Georgia, serif;
+      --sans: "Poppins", "Helvetica Neue", Arial, sans-serif;
+      --wrap: 1200px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.15; margin: 0 0 .5em; color: var(--ink); }
+    h1 { font-size: clamp(2.4rem, 5.2vw, 4rem); letter-spacing: -.01em; }
+    h2 { font-size: clamp(1.9rem, 3.6vw, 2.75rem); }
+    h3 { font-size: 1.45rem; }
+    p { margin: 0 0 1em; }
+    .wrap { width: min(100% - 32px, var(--wrap)); margin-inline: auto; }
+    .skip { position: absolute; left: -999px; top: 8px; background: var(--red); color: #fff; padding: 8px 14px; z-index: 100; }
+    .skip:focus { left: 8px; }
+
+    /* Eyebrow with the logo's dashed "stitch" line */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: .78rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--red); margin-bottom: 18px;
+    }
+    .eyebrow::before { content: ""; width: 36px; border-top: 2px dashed currentColor; }
+    .center .eyebrow::after { content: ""; width: 36px; border-top: 2px dashed currentColor; }
+    .center { text-align: center; }
+    .lede { font-size: 1.1rem; color: var(--muted); max-width: 60ch; }
+    .center .lede { margin-inline: auto; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 26px; border-radius: 999px;
+      font-family: var(--sans); font-size: .95rem; font-weight: 500; text-decoration: none;
+      border: 2px solid transparent; cursor: pointer;
+      transition: background .2s, color .2s, border-color .2s, transform .2s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--red); color: #fff; }
+    .btn-primary:hover { background: var(--red-dark); }
+    .btn-outline { border-color: var(--ink); color: var(--ink); }
+    .btn-outline:hover { background: var(--ink); color: #fff; }
+    .btn-light { background: #fff; color: var(--red); }
+    .btn-light:hover { background: var(--gold-soft); }
+    .arrow::after { content: "→"; display: inline-block; margin-left: 8px; transition: transform .2s; }
+    a:hover .arrow::after, .arrow:hover::after { transform: translateX(3px); }
+    .text-link { color: var(--red); font-weight: 500; text-decoration: none; display: inline-flex; gap: 8px; }
+    .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    /* Announcement bar */
+    .topbar { background: var(--red); color: #fff; font-size: .82rem; }
+    .topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 8px 0; }
+    .topbar a { text-decoration: none; }
+    .topbar a:hover { text-decoration: underline; }
+    .topbar-links { display: flex; gap: 18px; }
+
+    /* Header */
+    header.site {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(251, 247, 240, .92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 84px; }
+    .brand img { height: 58px; width: auto; }
+    nav.main ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+    nav.main a { text-decoration: none; font-size: .95rem; font-weight: 400; position: relative; padding: 6px 0; }
+    nav.main a::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+      border-top: 2px dashed var(--red); transform: scaleX(0); transition: transform .25s; transform-origin: left;
+    }
+    nav.main a:hover::after { transform: scaleX(1); }
+    .header-actions { display: flex; align-items: center; gap: 14px; }
+    .icon-btn {
+      width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+      border: 1px solid var(--line); background: #fff; color: var(--ink); text-decoration: none;
+    }
+    .icon-btn:hover { border-color: var(--red); color: var(--red); }
+    .icon-btn svg { width: 20px; height: 20px; }
+    .menu-toggle { display: none; cursor: pointer; }
+    .header-actions .btn { padding: 11px 22px; }
+
+    /* Hero */
+    .hero { padding: 64px 0 80px; position: relative; overflow: hidden; }
+    .hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+    .hero h1 em { font-style: normal; color: var(--red); }
+    .hero .lede { margin-bottom: 32px; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 36px; font-size: .88rem; color: var(--muted); }
+    .hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-meta span::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+    .hero-media { position: relative; min-height: 520px; }
+    .hero-media .main {
+      position: absolute; inset: 0 0 60px 60px; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow);
+    }
+    .hero-media .main img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-media .inset {
+      position: absolute; left: 0; bottom: 0; width: 46%; aspect-ratio: 4 / 5;
+      border-radius: 18px; overflow: hidden; border: 6px solid var(--cream); box-shadow: var(--shadow);
+    }
+    .hero-media .inset img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-media .badge {
+      position: absolute; right: -10px; bottom: 20px; background: #fff; border-radius: 16px; padding: 16px 20px;
+      box-shadow: var(--shadow); max-width: 230px; font-size: .85rem; line-height: 1.45;
+    }
+    .badge strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.15rem; color: var(--red); }
+    .dots {
+      position: absolute; width: 220px; height: 220px; right: -40px; top: -30px; z-index: -1;
+      background-image: radial-gradient(var(--red) 2px, transparent 2.5px);
+      background-size: 20px 20px; opacity: .14;
+    }
+
+
+    section.block { padding: 100px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 44px; flex-wrap: wrap; }
+    .section-head .lede { margin: 0; }
+
+    /* Collections */
+    .collections { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .tile {
+      position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 4.4;
+      text-decoration: none; color: #fff; background: #3a2c26; isolation: isolate;
+    }
+    .tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; z-index: -2; }
+    .tile::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(30, 12, 10, .78) 100%);
+    }
+    .tile:hover img { transform: scale(1.05); }
+    .tile-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 24px; }
+    .tile h3 { color: #fff; margin: 0 0 4px; font-size: 1.6rem; }
+    .tile p { margin: 0; font-size: .9rem; opacity: .9; }
+    .tile .go {
+      position: absolute; top: 18px; right: 18px; width: 42px; height: 42px; border-radius: 50%;
+      background: rgba(255,255,255,.92); color: var(--red); display: grid; place-items: center; font-size: 1.1rem;
+      transform: translateY(-4px); opacity: 0; transition: .25s;
+    }
+    .tile:hover .go { transform: none; opacity: 1; }
+    .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; justify-content: center; }
+    .pill {
+      padding: 9px 18px; border-radius: 999px; border: 1px solid var(--line); background: #fff;
+      text-decoration: none; font-size: .88rem;
+    }
+    .pill:hover { border-color: var(--red); color: var(--red); }
+    .pill.sale { background: var(--gold-soft); border-color: var(--gold); font-weight: 500; }
+
+    /* Services */
+    .services { background: var(--paper); border-block: 1px solid var(--line); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .card { background: var(--cream); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--line); }
+    .card-img { aspect-ratio: 16 / 11; overflow: hidden; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+    .card:hover .card-img img { transform: scale(1.04); }
+    .card-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
+    .card-body p { color: var(--muted); }
+    .card-body .text-link { margin-top: auto; }
+    .card .tag { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 8px; }
+
+    /* Why us */
+    .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 64px; padding-top: 48px; border-top: 2px dashed var(--line); }
+    .why .num { font-family: var(--serif); font-size: 2.2rem; color: var(--gold); line-height: 1; margin-bottom: 14px; }
+    .why h3 { font-size: 1.3rem; }
+    .why p { color: var(--muted); font-size: .95rem; margin: 0; }
+
+    /* Retreats */
+    .retreats .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
+    .retreat-img { border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); aspect-ratio: 4 / 5; }
+    .retreat-img img { width: 100%; height: 100%; object-fit: cover; }
+    .options { display: grid; gap: 18px; margin: 30px 0; }
+    .option { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; display: grid; grid-template-columns: 1fr auto; gap: 6px 18px; align-items: start; }
+    .option h3 { font-size: 1.3rem; margin: 0; }
+    .option .price { font-family: var(--serif); color: var(--red); font-size: 1.25rem; white-space: nowrap; text-align: right; line-height: 1.2; }
+    .option .price small { display: block; font-family: var(--sans); font-size: .72rem; color: var(--muted); }
+    .option p { grid-column: 1 / -1; margin: 4px 0 10px; color: var(--muted); font-size: .95rem; }
+    .option .text-link { grid-column: 1 / -1; font-size: .92rem; }
+
+    /* Meet Tina */
+    .tina { background: var(--red); color: #fff; position: relative; overflow: hidden; }
+    .tina::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(rgba(255,255,255,.09) 2px, transparent 2.5px); background-size: 22px 22px;
+    }
+    .tina .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; position: relative; z-index: 1; }
+    .tina-photo { border-radius: 50% 50% 22px 22px; overflow: hidden; aspect-ratio: 1 / 1.08; border: 8px solid rgba(255,255,255,.12); }
+    .tina-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .tina h2, .tina .eyebrow { color: #fff; }
+    .tina blockquote { font-family: var(--serif); font-size: clamp(1.4rem, 2.4vw, 1.85rem); line-height: 1.4; margin: 0 0 26px; }
+    .tina p { color: rgba(255,255,255,.85); }
+    .tina .sig { font-family: var(--serif); font-size: 1.25rem; color: var(--gold); margin-bottom: 28px; }
+
+    /* Visit / Contact */
+    .visit-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 40px; }
+    .info { display: grid; gap: 22px; align-content: start; }
+    .info-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+    .info-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .info-card p { margin: 0; color: var(--muted); }
+    .info-card a { color: var(--red); text-decoration: none; font-weight: 500; }
+    .hours { width: 100%; border-collapse: collapse; font-size: .95rem; }
+    .hours td { padding: 6px 0; border-bottom: 1px dashed var(--line); }
+    .hours td:last-child { text-align: right; font-weight: 500; }
+    .hours tr:last-child td { border-bottom: 0; }
+    .note { font-size: .82rem; color: var(--muted); margin-top: 10px !important; }
+    .map { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); min-height: 240px; }
+    .map iframe { width: 100%; height: 100%; min-height: 240px; border: 0; display: block; }
+    form.contact { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; }
+    form.contact h3 { font-size: 1.6rem; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    label { display: block; font-size: .82rem; font-weight: 500; margin-bottom: 6px; }
+    .field { margin-bottom: 16px; }
+    input, textarea, select {
+      width: 100%; font: inherit; font-size: .95rem; padding: 12px 14px; border-radius: 10px;
+      border: 1px solid var(--line); background: var(--cream); color: var(--ink);
+    }
+    input:focus, textarea:focus, select:focus { outline: 2px solid var(--gold); border-color: var(--gold); }
+    textarea { min-height: 140px; resize: vertical; }
+    .form-status { margin-top: 14px; font-size: .9rem; color: var(--red); }
+    .hp { position: absolute; left: -9999px; }
+
+    /* Newsletter */
+    .newsletter { background: var(--gold-soft); border-top: 1px solid var(--line); }
+    .newsletter .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 54px 0; flex-wrap: wrap; }
+    .newsletter h2 { margin: 0 0 4px; font-size: 2rem; }
+    .newsletter p { margin: 0; color: var(--muted); }
+
+    /* Footer */
+    footer.site { background: var(--ink); color: #D9CFC2; font-size: .92rem; }
+    footer.site .wrap { padding: 70px 0 30px; }
+    .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+    .foot-logo { background: #fff; border-radius: 12px; padding: 12px 16px; display: inline-block; margin-bottom: 18px; }
+    .foot-logo img { height: 56px; width: auto; }
+    footer h4 { font-family: var(--serif); font-weight: 400; font-size: 1.15rem; color: #fff; margin: 0 0 14px; }
+    footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+    footer a { text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+    .social { display: flex; gap: 10px; margin-top: 18px; }
+    .social a { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255,255,255,.2); display: grid; place-items: center; }
+    .social a:hover { border-color: var(--gold); }
+    .social svg { width: 18px; height: 18px; fill: currentColor; }
+    .foot-bottom { margin-top: 50px; padding-top: 22px; border-top: 1px dashed rgba(255,255,255,.18); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: .8rem; color: #A99D90; }
+
+    /* Reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* Responsive */
+    @media (max-width: 1020px) {
+      nav.main { display: none; }
+      .menu-toggle { display: grid; }
+      nav.main.open {
+        display: block; position: absolute; top: 84px; left: 0; right: 0; background: var(--cream);
+        border-bottom: 1px solid var(--line); box-shadow: var(--shadow);
+      }
+      nav.main.open ul { flex-direction: column; gap: 0; padding: 8px 16px 18px; }
+      nav.main.open a { display: block; padding: 14px 4px; border-bottom: 1px dashed var(--line); font-size: 1.05rem; }
+      .hero .wrap, .retreats .wrap, .tina .wrap, .visit-grid { grid-template-columns: 1fr; gap: 44px; }
+      .hero-media { min-height: 440px; }
+      .collections { grid-template-columns: repeat(2, 1fr); }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .cards .card:last-child { grid-column: 1 / -1; }
+      .foot-grid { grid-template-columns: 1fr 1fr; }
+      .tina-photo { max-width: 420px; }
+      .retreat-img { aspect-ratio: 16 / 12; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 15px; }
+      section.block { padding: 70px 0; }
+      .topbar .hide-sm { display: none; }
+      .topbar .wrap { justify-content: center; }
+      header.site .wrap { height: 72px; }
+      nav.main.open { top: 72px; }
+      .brand img { height: 46px; }
+      .header-actions .btn { display: none; }
+      .hero { padding: 36px 0 60px; }
+      .hero-media { min-height: 360px; }
+      .hero-media .main { inset: 0 0 40px 34px; }
+      .hero-media .badge { right: 0; bottom: 0; max-width: 190px; padding: 12px 14px; }
+      .hero-ctas .btn { flex: 1 1 auto; justify-content: center; }
+      .collections { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .tile { aspect-ratio: 3 / 4; }
+      .tile-body { padding: 14px; }
+      .tile h3 { font-size: 1.2rem; }
+      .tile p { display: none; }
+      .cards, .why { grid-template-columns: 1fr; }
+      .cards .card:last-child { grid-column: auto; }
+      .why { gap: 30px; }
+      .row { grid-template-columns: 1fr; gap: 0; }
+      form.contact { padding: 24px; }
+      .option { grid-template-columns: 1fr; }
+      .option .price { text-align: left; }
+      .foot-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="topbar">
+    <div class="wrap">
+      <span>Open Mon–Fri 10–5 &amp; Sat 10–2 <span class="hide-sm">· 248 Mangum Road, Marquette, MI</span></span>
+      <div class="topbar-links hide-sm">
+        <a href="https://www.farmgirlquiltsstudio.com/shop/CLEARANCE.htm">Shop Clearance</a>
+        <a href="tel:+19062260664">(906) 226-0664</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Farmgirl Quilts Stitching Studio — home">
+        <img src="images/logo.png" alt="Farmgirl Quilts Stitching Studio" width="142" height="58">
+      </a>
+      <nav class="main" id="mainnav" aria-label="Main">
+        <ul>
+          <li><a href="https://www.farmgirlquiltsstudio.com/shop.htm">Shop</a></li>
+          <li><a href="https://www.farmgirlquiltsstudio.com/classes.htm">Classes</a></li>
+          <li><a href="#services">Long Arm</a></li>
+          <li><a href="#retreats">Retreats</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#visit">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-btn" href="https://www.farmgirlquiltsstudio.com/module/product.htm?checkout=3" aria-label="View cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h15l-1.5 9h-12z"/><path d="M6 7 5 3H2"/><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/></svg>
+        </a>
+        <a class="btn btn-primary" href="https://www.farmgirlquiltsstudio.com/shop.htm">Shop Now</a>
+        <button class="icon-btn menu-toggle" aria-controls="mainnav" aria-expanded="false" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Marquette, Michigan</div>
+          <h1>Your destination for all things <em>quilting &amp; stitching.</em></h1>
+          <p class="lede">Stitching, quilting and creating — made simple. Explore fabric, thread, wool, kits, tools and inspiration at Farmgirl Quilts Stitching Studio, the Upper Peninsula of Michigan's home for crafting community.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="https://www.farmgirlquiltsstudio.com/shop.htm"><span class="arrow">Shop the Studio</span></a>
+            <a class="btn btn-outline" href="https://www.farmgirlquiltsstudio.com/classes.htm">View Classes</a>
+          </div>
+          <div class="hero-meta">
+            <span>Fabric &amp; wool</span><span>Long arm quilting</span><span>Classes &amp; clubs</span><span>Private retreats</span>
+          </div>
+        </div>
+        <div class="hero-media reveal">
+          <div class="dots" aria-hidden="true"></div>
+          <div class="main"><img src="images/studio-wool-wall.jpg" alt="Rainbow wall of wool and fabric inside Farmgirl Quilts Studio" width="804" height="630"></div>
+          <div class="inset"><img src="images/fabric-bundles.jpg" alt="Stacks of fabric bundles tied with ribbon" width="468" height="630"></div>
+          <div class="badge"><strong>Make it your own.</strong>Fabrics, patterns and kits for every skill level.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTIONS -->
+    <section class="block" id="shop">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Shop the Studio</div>
+            <h2>Explore our collections</h2>
+            <p class="lede">From sewing tools to creative kits, find what you need to create with confidence.</p>
+          </div>
+          <a class="btn btn-outline" href="https://www.farmgirlquiltsstudio.com/shop.htm"><span class="arrow">Shop All</span></a>
+        </div>
+
+        <div class="collections">
+          <a class="tile reveal" href="https://www.farmgirlquiltsstudio.com/shop/Fresh-Arrivals.htm">
+            <img src="images/fabric-bundles.jpg" alt="" loading="lazy">
+            <span class="go" aria-hidden="true">→</span>
+            <div class="tile-body"><h3>Fresh Arrivals</h3><p>The newest fabrics, patterns and notions in the studio.</p></div>
+          </a>
+          <a class="tile reveal" href="https://www.farmgirlquiltsstudio.com/shop/Quilting/Fabrics.htm">
+            <img src="images/fabric-shelf.jpg" alt="" loading="lazy">
+            <span class="go" aria-hidden="true">→</span>
+            <div class="tile-body"><h3>Fabrics</h3><p>Traditional to modern designs from renowned brands.</p></div>
+          </a>
+          <a class="tile reveal" href="https://www.farmgirlquiltsstudio.com/shop/Kits.htm">
+            <img src="images/studio-fabric-bolts.jpg" alt="" loading="lazy">
+            <span class="go" aria-hidden="true">→</span>
+            <div class="tile-body"><h3>Quilt Kits</h3><p>Complete kits for quick and easy creative projects.</p></div>
+          </a>
+          <a class="tile reveal" href="https://www.farmgirlquiltsstudio.com/shop/Stitching-Supplies.htm">
+            <img src="images/thread-wall.jpg" alt="" loading="lazy">
+            <span class="go" aria-hidden="true">→</span>
+            <div class="tile-body"><h3>Stitching Supplies</h3><p>Specialty thread, wool and hand-stitching essentials.</p></div>
+          </a>
+          <a class="tile reveal" href="https://www.farmgirlquiltsstudio.com/shop/Stitching-Supplies/Tools--Accessories.htm">
+            <img src="images/notions.jpg" alt="" loading="lazy">
+            <span class="go" aria-hidden="true">→</span>
+            <div class="tile-body"><h3>Tools &amp; Notions</h3><p>Needles, rulers, cutting tools and machine accessories.</p></div>
+          </a>
+          <a class="tile reveal" href="https://www.farmgirlquiltsstudio.com/shop/Home--Gifts.htm">
+            <img src="images/tidy-sew-gift.jpg" alt="" loading="lazy">
+            <span class="go" aria-hidden="true">→</span>
+            <div class="tile-body"><h3>Home &amp; Gifts</h3><p>FQ Originals and lifestyle goods with Farmgirl flair.</p></div>
+          </a>
+        </div>
+
+        <div class="pills reveal">
+          <a class="pill" href="https://www.farmgirlquiltsstudio.com/shop/Quilting.htm">Quilting</a>
+          <a class="pill" href="https://www.farmgirlquiltsstudio.com/shop/Coming-Soon.htm">Coming Soon</a>
+          <a class="pill" href="https://www.farmgirlquiltsstudio.com/brands.htm">Shop by Brand</a>
+          <a class="pill" href="https://www.farmgirlquiltsstudio.com/gift-cards.htm">Gift Cards</a>
+          <a class="pill sale" href="https://www.farmgirlquiltsstudio.com/shop/CLEARANCE.htm">Clearance</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="block services" id="services">
+      <div class="wrap">
+        <div class="center reveal" style="margin-bottom:48px">
+          <div class="eyebrow">Your Creative Partner</div>
+          <h2>Create, quilt and stitch with confidence</h2>
+          <p class="lede">We're here to help — from finishing your quilt tops to teaching new techniques and hosting your next sewing getaway.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card-img"><img src="images/longarm-quilting.jpg" alt="Long arm quilting machine stitching a red appliqué quilt" loading="lazy"></div>
+            <div class="card-body">
+              <div class="tag">Service</div>
+              <h3>Long Arm Quilting</h3>
+              <p>We can transform your quilt tops into true masterpieces. Bring in your top and we'll help you choose the finish that makes it shine.</p>
+              <a class="text-link" href="#visit"><span class="arrow">Get in touch</span></a>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card-img"><img src="images/chirp-quilt.jpg" alt="Colorful wool appliqué bird quilt hanging in the studio" loading="lazy"></div>
+            <div class="card-body">
+              <div class="tag">Learn</div>
+              <h3>Classes &amp; Clubs</h3>
+              <p>Learn new skills and make new friends. Slow Stitch Thursdays, Block of the Month series, wool groups and more — pre-registration required.</p>
+              <a class="text-link" href="https://www.farmgirlquiltsstudio.com/classes.htm"><span class="arrow">Register online</span></a>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card-img"><img src="images/classroom-machine.jpg" alt="Sewing machine set up in the bright studio classroom" loading="lazy"></div>
+            <div class="card-body">
+              <div class="tag">Gather</div>
+              <h3>Sewing Retreats</h3>
+              <p>Reserve our Sewing Barn for a day or a weekend, or stay overnight at The Hen House. Bring your group and your projects.</p>
+              <a class="text-link" href="#retreats"><span class="arrow">Explore retreats</span></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="why">
+          <div class="reveal">
+            <div class="num">01</div>
+            <h3>A world of creative possibilities</h3>
+            <p>Fabrics, patterns, kits and projects for every skill level — from quilts that tell stories to "Make It Your Own" projects that reflect your unique flair.</p>
+          </div>
+          <div class="reveal">
+            <div class="num">02</div>
+            <h3>Expert guidance &amp; support</h3>
+            <p>Our experienced stitching and quilting enthusiasts help you pick the perfect fabrics and notions, with personalized advice every step of the way.</p>
+          </div>
+          <div class="reveal">
+            <div class="num">03</div>
+            <h3>Easy online registration</h3>
+            <p>Every workshop, class and studio-time event is listed online. Register ahead and we'll follow up with everything you need to know.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RETREATS -->
+    <section class="block retreats" id="retreats">
+      <div class="wrap">
+        <div class="retreat-img reveal"><img src="images/studio-space.jpg" alt="Rainbow shelves of wool and fabric inside the Farmgirl Quilts studio" loading="lazy"></div>
+        <div class="reveal">
+          <div class="eyebrow">Retreats</div>
+          <h2>Time to slow down and create together</h2>
+          <p class="lede">Bring your group, your projects and enjoy creative time together in our cozy studio space in Michigan's Upper Peninsula.</p>
+
+          <div class="options">
+            <div class="option">
+              <h3>Sewing Barn Retreat</h3>
+              <div class="price">$160<small>per person</small></div>
+              <p>Sleep in your own bed. Friday–Sunday, 8am–8pm, for up to 6 people — with a light breakfast and lunch daily and a Saturday group dinner.</p>
+              <a class="text-link" href="https://www.farmgirlquiltsstudio.com/private-retreat-at-farmgirl-quilts.htm"><span class="arrow">Retreat details</span></a>
+            </div>
+            <div class="option">
+              <h3>Single Day Barn Rental</h3>
+              <div class="price">$100<small>per day</small></div>
+              <p>Need space to spread out and sew? Rent the Sewing Barn for up to 6 people — just you, your projects and plenty of room to create.</p>
+              <a class="text-link" href="tel:+19062260664"><span class="arrow">Call to reserve</span></a>
+            </div>
+            <div class="option">
+              <h3>The Hen House at North Star Farm</h3>
+              <div class="price">$75<small>per person / night</small></div>
+              <p>Overnight retreat getaway for groups — two furnished apartments sleeping up to 11, plus a barn workroom built with quilters in mind.</p>
+              <a class="text-link" href="https://www.farmgirlquiltsstudio.com/the-hen-house--marquette-sewing-retreat-rental.htm"><span class="arrow">Check availability</span></a>
+            </div>
+          </div>
+          <a class="btn btn-primary" href="https://www.farmgirlquiltsstudio.com/module/events.htm?pageComponentId=8168826&amp;month=current">View Retreat Calendar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEET TINA -->
+    <section class="block tina" id="about">
+      <div class="wrap">
+        <div class="tina-photo reveal"><img src="images/tina-baker.jpg" alt="Tina Baker, owner of Farmgirl Quilts, holding bolts of fabric" loading="lazy"></div>
+        <div class="reveal">
+          <div class="eyebrow">Meet the Maker</div>
+          <blockquote>"Life is too busy — slow down and create something just your own at Farmgirl Quilts Studio!"</blockquote>
+          <div class="sig">— Tina Baker, Owner, Quilter &amp; Maker</div>
+          <p>Tina studied at Northern Michigan University and Kendall College of Art and Design. She lives on 38 acres in Beaver Grove, on the beautiful shores of Lake Superior, with her family, her flock of hens and two Great Pyrenees.</p>
+          <p>You'll find her working daily in the studio — creating, designing projects and patterns, and teaching all she knows. Her motto says it all: <em>Make it Your Own.</em></p>
+          <a class="btn btn-light" href="https://www.farmgirlquiltsstudio.com/about-us.htm" style="margin-top:12px"><span class="arrow">Our Story</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT / CONTACT -->
+    <section class="block" id="visit">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Come See Us</div>
+            <h2>Visit the studio</h2>
+            <p class="lede">Stop in, say hello and get inspired. Questions about long arm quilting, classes or retreats? Send us a note.</p>
+          </div>
+        </div>
+
+        <div class="visit-grid">
+          <div class="info reveal">
+            <div class="info-card">
+              <h3>Farmgirl Quilts Studio</h3>
+              <p>248 Mangum Road<br>Marquette, MI 49855</p>
+              <p style="margin-top:12px"><a href="tel:+19062260664">(906) 226-0664</a><br><a href="mailto:farmgirlquiltsstudio@gmail.com">farmgirlquiltsstudio@gmail.com</a></p>
+            </div>
+            <div class="info-card">
+              <h3>Business Hours</h3>
+              <table class="hours">
+                <tr><td>Monday – Friday</td><td>10am – 5pm</td></tr>
+                <tr><td>Saturday</td><td>10am – 2pm</td></tr>
+                <tr><td>Sunday</td><td>Closed</td></tr>
+              </table>
+              <p class="note">Closed the last Saturday of each month.</p>
+            </div>
+            <div class="map">
+              <iframe title="Map to Farmgirl Quilts Studio" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=248+Mangum+Road,+Marquette,+MI+49855&amp;output=embed"></iframe>
+            </div>
+            <p class="note">Take US 41 south from Marquette toward Harvey/Escanaba, about 3 miles past the US 41–M28 intersection, and turn left onto Mangum Road. We're about ½ mile down on the right — look for the black mailbox with a welcome flag.</p>
+          </div>
+
+          <form class="contact reveal" id="contact-form" novalidate>
+            <h3>Send us a message</h3>
+            <p style="color:var(--muted)">We'll get back to you as soon as we can.</p>
+            <div class="row">
+              <div class="field"><label for="fname">First name*</label><input id="fname" name="first_name" autocomplete="given-name" required></div>
+              <div class="field"><label for="lname">Last name*</label><input id="lname" name="last_name" autocomplete="family-name" required></div>
+            </div>
+            <div class="row">
+              <div class="field"><label for="email">Email*</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+              <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+            </div>
+            <div class="field">
+              <label for="topic">I'm asking about…</label>
+              <select id="topic" name="topic">
+                <option>General question</option>
+                <option>Long arm quilting</option>
+                <option>Classes &amp; clubs</option>
+                <option>Private retreat / Sewing Barn</option>
+                <option>The Hen House</option>
+                <option>An online order</option>
+              </select>
+            </div>
+            <div class="field"><label for="message">Message*</label><textarea id="message" name="message" required></textarea></div>
+            <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn btn-primary" type="submit"><span class="arrow">Send Message</span></button>
+            <div class="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <div class="wrap">
+        <div>
+          <h2>Stay in the loop</h2>
+          <p>Sign up to hear about new arrivals, classes, retreats and studio news.</p>
+        </div>
+        <a class="btn btn-primary" href="https://www.farmgirlquiltsstudio.com/newsletter.htm"><span class="arrow">Join Our Newsletter</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="foot-logo" href="#top"><img src="images/logo.png" alt="Farmgirl Quilts Stitching Studio" width="137" height="56"></a>
+          <p>Stitching, quilting and creating — made simple. The Upper Peninsula of Michigan's destination for crafting community.</p>
+          <div class="social">
+            <a href="https://www.facebook.com/farmgirlquiltsstudio" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9H17l.6-4h-4.1V8.8c0-.5.3-.8.5-.8z"/></svg></a>
+            <a href="https://www.instagram.com/farmgirlquiltsstudio/" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21.9 8c-.1-1.6-.4-3-1.6-4.2S17.6 2.2 16 2.1C14.4 2 9.6 2 8 2.1 6.4 2.2 5 2.5 3.8 3.7S2.2 6.4 2.1 8C2 9.6 2 14.4 2.1 16c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.6.1 6.4.1 8 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.6.1-6.4 0-8zm-2 9.8a3.4 3.4 0 0 1-1.9 1.9c-1.3.5-4.4.4-5.9.4s-4.6.1-5.9-.4a3.4 3.4 0 0 1-1.9-1.9c-.5-1.3-.4-4.4-.4-5.8s-.1-4.6.4-5.9A3.4 3.4 0 0 1 6.2 4.2c1.3-.5 4.4-.4 5.8-.4s4.6-.1 5.9.4a3.4 3.4 0 0 1 1.9 1.9c.5 1.3.4 4.4.4 5.9s.1 4.5-.4 5.8z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="https://www.farmgirlquiltsstudio.com/shop.htm">Shop All</a></li>
+            <li><a href="https://www.farmgirlquiltsstudio.com/shop/Fresh-Arrivals.htm">Fresh Arrivals</a></li>
+            <li><a href="https://www.farmgirlquiltsstudio.com/shop/Kits.htm">Kits</a></li>
+            <li><a href="https://www.farmgirlquiltsstudio.com/brands.htm">Shop by Brand</a></li>
+            <li><a href="https://www.farmgirlquiltsstudio.com/gift-cards.htm">Gift Cards</a></li>
+            <li><a href="https://www.farmgirlquiltsstudio.com/shop/CLEARANCE.htm">Clearance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="https://www.farmgirlquiltsstudio.com/classes.htm">Classes &amp; Workshops</a></li>
+            <li><a href="https://www.farmgirlquiltsstudio.com/pick-a-petal-jen-kingwell-block-of-the-month-at-farmgirl-quilts-stitching-studio.htm">Block of the Month</a></li>
+            <li><a href="https://www.farmgirlquiltsstudio.com/module/events.htm?pageComponentId=8168826&amp;month=current">FQ Hosted Retreats</a></li>
+            <li><a href="https://www.farmgirlquiltsstudio.com/the-hen-house--marquette-sewing-retreat-rental.htm">Book a Private Retreat</a></li>
+            <li><a href="https://www.farmgirlquiltsstudio.com/about-us.htm">About Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <ul>
+            <li>248 Mangum Road<br>Marquette, MI 49855</li>
+            <li><a href="tel:+19062260664">(906) 226-0664</a></li>
+            <li>Mon–Fri 10–5 · Sat 10–2</li>
+            <li><a href="https://www.farmgirlquiltsstudio.com/c/account/login.php">Account Login</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span id="year">2026</span> Farmgirl Quilts LLC. All rights reserved.</span>
+        <span><a href="https://www.farmgirlquiltsstudio.com/site-map.htm">Site Map</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Contact form: set FORM_ENDPOINT to a form service URL (e.g. Formspree, Netlify, or the host's handler)
+    // when this goes live. Until then, the form opens a pre-filled email to the studio.
+    const FORM_ENDPOINT = "";
+    const STUDIO_EMAIL = "farmgirlquiltsstudio@gmail.com";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.getElementById("mainnav");
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open);
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+    nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    }));
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+    const form = document.getElementById("contact-form");
+    const status = form.querySelector(".form-status");
+    form.addEventListener("submit", async (ev) => {
+      ev.preventDefault();
+      if (form.company.value) return;
+      if (!form.checkValidity()) {
+        status.textContent = "Please fill in your name, email and message.";
+        form.querySelector(":invalid").focus();
+        return;
+      }
+      const data = Object.fromEntries(new FormData(form));
+      delete data.company;
+      if (FORM_ENDPOINT) {
+        try {
+          const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(data) });
+          if (!res.ok) throw new Error();
+          form.reset();
+          status.textContent = "Thank you! Your message is on its way — we'll be in touch soon.";
+        } catch {
+          status.textContent = "Sorry, something went wrong. Please call us at (906) 226-0664.";
+        }
+        return;
+      }
+      const subject = `Website inquiry: ${data.topic}`;
+      const body = `Name: ${data.first_name} ${data.last_name}\nEmail: ${data.email}\nPhone: ${data.phone || "-"}\n\n${data.message}`;
+      window.location.href = `mailto:${STUDIO_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      status.textContent = "Opening your email app to send the message…";
+    });
+  </script>
+</body>
+</html>
